@@ -12,7 +12,6 @@ public class JogoVida {
     static int m;
     static int[][] matrizA;
     static int[][] matrizB;
-    static Byte flag;
     static Scanner entrada;
 
     public static void main(String[] args) {
