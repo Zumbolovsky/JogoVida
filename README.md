@@ -48,7 +48,7 @@ public class JogoVida {
         m = Integer.parseInt(entrada.nextLine());
 
         matrizA = new int[m][m];
-        matrizB = matrizA;
+        matrizB = new int[m][m];
         contLive = 0;
     }
 
