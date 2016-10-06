@@ -292,10 +292,4 @@ public class Projeto {
         }
     }
 
-    private static void Change(int[][] matriz) {
-        int[][] matrizn = new int[matriz.length][matriz.length];
-        matrizn = matriz;
-
-    }
-
 }
