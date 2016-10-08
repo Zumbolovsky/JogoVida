@@ -1,11 +1,9 @@
-package projeto;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintStream;
+import java.io.File; 
+import java.io.FileNotFoundException; 
+import java.io.PrintStream; 
 import java.util.Scanner;
 
-public class Projeto {
+public class JogoVida {
 
     static int contLive;
     static int nGeracoes;
@@ -17,15 +15,14 @@ public class Projeto {
     public static void main(String[] args) {
         //entrada (.txt + quantidade de geracoes)
         try {
-            Scanner sc = new Scanner(System.in);
-            nGeracoes = sc.nextInt();
-            Input("teste.txt");
+            Input(args[0]);
+            nGeracoes = Integer.parseInt(args[1]);
             LoadMatriz();
-            
+
             for (int i = 0; i < nGeracoes; i++) {
                 StartGeneration();
             }
-            
+
             Write();
 
         } catch (FileNotFoundException e) {
@@ -166,8 +163,7 @@ public class Projeto {
                     }
                 } //linhas do meio, aqui teram 3 formas diferente j == 0, j == m - 1, outros
                 else //meio && primeiraColuna
-                {
-                    if (j == 0) {
+                 if (j == 0) {
                         //cima
                         if (matrizA[i - 1][j] == 1) {
                             contLive++;
@@ -245,13 +241,12 @@ public class Projeto {
                             contLive++;
                         }
                     }
-                }
                 //validar o resultado e passar pra matrizB
                 /*
-                     - Se a celula esta VIVA e tem menos de 2 ou mais de 3 vizinhos vivos ela MORRE.
-                     - Uma celula VIVA, adjacente a 2 ou 3 celulas vivas permanece VIVA.
-                     - Uma celula MORTA, adjacente a 2 ou 3 celulas vivas VIVE.
-                     - Se a celula esta MORTA e tem menos de 2 ou mais de 3 vizinhos vivos ela continua MORTA.
+                 - Se a celula esta VIVA e tem menos de 2 ou mais de 3 vizinhos vivos ela MORRE.
+                 - Uma celula VIVA, adjacente a 2 ou 3 celulas vivas permanece VIVA.
+                 - Uma celula MORTA, adjacente a 2 ou 3 celulas vivas VIVE.
+                 - Se a celula esta MORTA e tem menos de 2 ou mais de 3 vizinhos vivos ela continua MORTA.
                  */
                 //validacoes de viva
                 if (matrizA[i][j] == 1) {
