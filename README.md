@@ -245,8 +245,8 @@ public class JogoVida {
                 /*
                  - Se a celula esta VIVA e tem menos de 2 ou mais de 3 vizinhos vivos ela MORRE.
                  - Uma celula VIVA, adjacente a 2 ou 3 celulas vivas permanece VIVA.
-                 - Uma celula MORTA, adjacente a 2 ou 3 celulas vivas VIVE.
-                 - Se a celula esta MORTA e tem menos de 2 ou mais de 3 vizinhos vivos ela continua MORTA.
+                 - Uma celula MORTA, adjacente a 3 celulas vivas VIVE.
+                 - Se a celula esta MORTA e tem menos ou mais de 3 vizinhos vivos ela continua MORTA.
                  */
                 //validacoes de viva
                 if (matrizA[i][j] == 1) {
@@ -256,7 +256,7 @@ public class JogoVida {
                         matrizB[i][j] = 1;
                     }
                 } //validacoes de morta
-                else if (contLive == 2 || contLive == 3) {
+                else if (contLive == 3) {
                     matrizB[i][j] = 1;
                 } else {
                     matrizB[i][j] = 0;
